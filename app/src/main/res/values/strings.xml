@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Push</string>
+    <string name="msg_token_fmt">0</string>
+    <string name="title_activity_info_activty">InfoActivty</string>
+</resources>
