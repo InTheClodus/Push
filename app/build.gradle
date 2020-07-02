@@ -41,4 +41,5 @@ dependencies {
     api project(path: ':push')
     implementation 'com.google.firebase:firebase-analytics:17.4.3'
     implementation 'com.google.firebase:firebase-messaging:20.2.1'
+    implementation 'androidx.work:work-runtime:2.3.4'
 }

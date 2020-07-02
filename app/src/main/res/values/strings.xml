@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">Push</string>
-    <string name="msg_token_fmt">0</string>
-    <string name="title_activity_info_activty">InfoActivty</string>
+    <string name="quickstart_message">单击下面的“订阅天气”按钮以订阅
+         天气主题。 将收到发送到天气主题的消息。 LOG TOKEN按钮记录
+         实例ID令牌到logcat。</string>
+    <string name="subscribe_to_weather">订阅天气</string>
+    <string name="log_token">日志令牌</string>
+
+    <string name="msg_subscribed">Subscribed to weather topic</string>
+    <string name="msg_token_fmt" translatable="false">实例ID令牌: %s</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm默认频道</string>
+    <!--
+        This is the name that users will see when interacting with this channel.
+        It should describe the category of notifications that will be sent through this channel
+     -->
+    <!-- [START fcm_default_icon_string] -->
+    <string name="default_notification_channel_name" translatable="true">天气</string>
+    <!-- [END fcm_default_icon_string] -->
+    <string name="msg_subscribe_failed">未能订阅天气话题</string>
+    <string name="fcm_message">FCM消息</string>
 </resources>

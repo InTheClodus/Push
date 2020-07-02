@@ -16,7 +16,6 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".InfoActivty"
-            android:label="@string/title_activity_info_activty"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>

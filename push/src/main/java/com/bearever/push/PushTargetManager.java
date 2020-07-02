@@ -1,6 +1,7 @@
 package com.bearever.push;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.bearever.push.model.PushTargetEnum;
 import com.bearever.push.model.ReceiverInfo;
@@ -76,6 +77,7 @@ public class PushTargetManager {
      */
     public PushTargetManager init(Application context) {
         String mobile_brand = android.os.Build.MANUFACTURER;
+        Log.d("手机型号",mobile_brand);
         mobile_brand = mobile_brand.toUpperCase();
         //根据设备厂商选择推送平台
         //小米的使用小米推送，华为使用华为推送...其他的使用极光推送
@@ -95,8 +97,8 @@ public class PushTargetManager {
             this.mTarget = PushTargetEnum.MEIZU;
             this.mPushTarget = new MeizuInit(context);
         } else {
-//            this.mTarget = PushTargetEnum.JPUSH;
-//            this.mPushTarget = new JPushInit(context);
+            this.mTarget = PushTargetEnum.JPUSH;
+            this.mPushTarget = new JPushInit(context);
               this.mTarget=PushTargetEnum.GOOGLE;
               this.mPushTarget=new GoogleInit(context);
         }
