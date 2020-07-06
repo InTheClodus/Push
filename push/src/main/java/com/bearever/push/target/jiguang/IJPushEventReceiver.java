@@ -31,7 +31,6 @@ public class IJPushEventReceiver extends JPushMessageReceiver {
     public void onAliasOperatorResult(Context var1, JPushMessage var2) {
         ReceiverInfo aliasInfo = new ReceiverInfo();
         aliasInfo.setContent(var2.getAlias());
-        Log.d("MainActivty",var2.getAlias());
         aliasInfo.setPushTarget(PushTargetEnum.JPUSH);
         aliasInfo.setRawData(var2);
         PushReceiverHandleManager.getInstance().onAliasSet(var1, aliasInfo);
