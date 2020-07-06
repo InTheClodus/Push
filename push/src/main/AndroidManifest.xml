@@ -24,13 +24,13 @@
     <permission
         android:name="${applicationId}.push.permission.MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="${applicationId}.push.permission.MESSAGE"></uses-permission>
+    <uses-permission android:name="${applicationId}.push.permission.MESSAGE" />
 
     <!-- 兼容 flyme3.0 配置权限-->
     <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
     <permission
         android:name="${applicationId}.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"></permission>
+        android:protectionLevel="signature" />
     <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
     <!--魅族推送  end-->
 

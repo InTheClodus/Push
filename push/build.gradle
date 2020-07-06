@@ -8,7 +8,7 @@ android {
         manifestPlaceholders = [
                 "jPushAppkey"     : "516ab7ea1880beb1183b956a",//极光推送的AppKey
                 "huaweiPushAppId" : "100698925",//华为推送的AppId
-                "xiaomiPushAppkey": "55617974 54571",//"57417800 14675",//小米推送的AppKey****请务必在数值中间添加一个空格，否则会发生数值变化****
+                "xiaomiPushAppkey": "28823037615184 50754",//"57417800 14675",//小米推送的AppKey****请务必在数值中间添加一个空格，否则会发生数值变化****
                 "xiaomiPushAppId" : "28823037 61517974571",//"28823037 61517800675",//小米推送的AppID****请务必在数值中间添加一个空格，否则会发生数值变化****
                 "oppoAppKey"      : "9d24177594c741be86465ec9fe490a44",//OPPO推送的appKey
                 "oppoAppSecret"   : "c60bec1f803e49e88037562ec2109286",//OPPO推送的appSecret
@@ -72,9 +72,4 @@ dependencies {
     implementation files('libs/HMS_SDK_2.6.0.301.jar')
     implementation 'com.google.code.gson:gson:2.2.4'
     implementation (name: 'push-internal-3.8.1', ext: 'aar')
-    implementation 'com.google.firebase:firebase-analytics:17.4.3'
-    implementation 'com.google.firebase:firebase-messaging:20.2.1'
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'com.google.firebase:firebase-iid:20.2.1'
-
 }

@@ -22,34 +22,42 @@ public class MainActivity extends AppCompatActivity {
 
     private static String TAG="MainActivty";
 
+    private PushBroadcastReceiverIml pushBroadcastReceiverIml;
+    private IntentFilter intentFilter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         PushTargetManager.getInstance().init(getApplication());
+//        intentFilter=new IntentFilter();
+//        intentFilter.addAction("com.bearever.pushdemo.PushBroadcastReceiverIml");
+//        pushBroadcastReceiverIml=new PushBroadcastReceiverIml();
+//        registerReceiver(pushBroadcastReceiverIml,intentFilter);
+//
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "getInstanceId failed", task.getException());
+                            return;
+                        }
 
-        PushBroadcastReceiverIml pushBroadcastReceiverIml=new PushBroadcastReceiverIml();
-        IntentFilter filter= new IntentFilter();
-        filter.addAction("com.bearever.push.RECEIVER");
-        registerReceiver(pushBroadcastReceiverIml,filter);
-//        FirebaseInstanceId.getInstance().getInstanceId()
-//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-//                        if (!task.isSuccessful()) {
-//                            Log.w(TAG, "getInstanceId failed", task.getException());
-//                            return;
-//                        }
-//
-//                        // Get new Instance ID token
-//                        String token = Objects.requireNonNull(task.getResult()).getToken();
-//
-//                        // Log and toast
-//
-//                        Log.d(TAG, token);
-//                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
-//                    }
-//                });
+                        // Get new Instance ID token
+                        String token = Objects.requireNonNull(task.getResult()).getToken();
+
+                        // Log and toast
+
+                        Log.d(TAG, token);
+                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(pushBroadcastReceiverIml);
+        Runtime.getRuntime().gc();
+    }
 }

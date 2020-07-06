@@ -3,6 +3,7 @@ package com.bearever.push.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.bearever.push.model.ReceiverInfo;
 import com.google.gson.Gson;
@@ -17,6 +18,7 @@ public abstract class BasePushBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d("广播","MSG:"+intent);
         if (intent == null) {
             return;
         }
@@ -24,22 +26,6 @@ public abstract class BasePushBroadcastReceiver extends BroadcastReceiver {
         String json = intent.getStringExtra("receiverinfo");
         ReceiverInfo info = new Gson().fromJson(json, ReceiverInfo.class);
 //        根据推送平台确定原始数据的类型
-//        PushTargetEnum pushTargetEnum = (PushTargetEnum) intent.getSerializableExtra("pushTarget");
-//        switch (pushTargetEnum) {
-//            case MEIZU:
-//
-//                break;
-//            case HUAWEI:
-//                break;
-//            case JPUSH:
-//                break;
-//            case OPPO:
-//                break;
-//            case VIVO:
-//                break;
-//            case XIAOMI:
-//                break;
-//        }
         int type = intent.getIntExtra("type", 0);
         switch (type) {
             case PushReceiverHandleManager.TYPE_REGISTRATION:

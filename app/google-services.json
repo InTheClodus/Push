@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:498042304382:android:2aa2aa130349f8ee81252f",
+        "mobilesdk_app_id": "1:498042304382:android:1f2d392db2fefc9781252f",
         "android_client_info": {
           "package_name": "com.bearever.pushdemo"
         }

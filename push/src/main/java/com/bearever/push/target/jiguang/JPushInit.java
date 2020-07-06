@@ -19,6 +19,7 @@ public class JPushInit extends BasePushTargetInit {
     public JPushInit(Application application) {
         super(application);
         JPushInterface.init(application);
+        Log.d(TAG,JPushInterface.getRegistrationID(application));
         Log.d(TAG, "初始化极光推送");
     }
 
