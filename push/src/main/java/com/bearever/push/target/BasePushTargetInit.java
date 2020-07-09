@@ -2,7 +2,6 @@ package com.bearever.push.target;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import com.bearever.push.model.ReceiverInfo;
 
@@ -32,7 +31,6 @@ public abstract class BasePushTargetInit {
      * @param alias
      */
     public void setAlias(Context context, String alias, ReceiverInfo registerInfo) {
-        Log.d("Alias",alias);
         this.mAlias = alias;
     }
 }

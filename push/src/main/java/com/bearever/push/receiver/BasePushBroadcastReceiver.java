@@ -3,7 +3,7 @@ package com.bearever.push.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+import android.widget.Toast;
 
 import com.bearever.push.model.ReceiverInfo;
 import com.google.gson.Gson;
@@ -11,6 +11,8 @@ import com.google.gson.Gson;
 /**
  * 推送集成聚合广播接收器
  *
+ * @author :  malong    luomingbear@163.com
+ * @date :  2019/4/18
  **/
 public abstract class BasePushBroadcastReceiver extends BroadcastReceiver {
     public BasePushBroadcastReceiver() {
@@ -18,14 +20,12 @@ public abstract class BasePushBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.d("广播","MSG:"+intent);
         if (intent == null) {
             return;
         }
-
+        Toast.makeText(context,"接收到自定义广播",Toast.LENGTH_SHORT).show();
         String json = intent.getStringExtra("receiverinfo");
         ReceiverInfo info = new Gson().fromJson(json, ReceiverInfo.class);
-//        根据推送平台确定原始数据的类型
         int type = intent.getIntExtra("type", 0);
         switch (type) {
             case PushReceiverHandleManager.TYPE_REGISTRATION:

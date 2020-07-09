@@ -1,7 +1,6 @@
 package com.bearever.push.target.jiguang;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.bearever.push.model.PushTargetEnum;
 import com.bearever.push.model.ReceiverInfo;

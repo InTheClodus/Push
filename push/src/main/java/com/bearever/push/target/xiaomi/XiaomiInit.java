@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * 小米推送的初始化
+ * Created by luoming on 2018/5/28.
  */
 
 public class XiaomiInit extends BasePushTargetInit {

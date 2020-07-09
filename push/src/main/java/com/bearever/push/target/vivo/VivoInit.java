@@ -14,6 +14,9 @@ import com.vivo.push.PushClient;
 
 /**
  * desc:  vivo推送初始化类
+ * auth:  malong
+ * email: luomingbear@163.com
+ * time:  2019/4/18
  **/
 public class VivoInit extends BasePushTargetInit {
     private static final String TAG = "VivoInit";
@@ -33,7 +36,7 @@ public class VivoInit extends BasePushTargetInit {
             mHandler = new Handler();
         }
         mHandler.post(initRunnable);
-        Log.d(TAG, "初始化Vivo推送");
+        Log.d(TAG, "初始化魅族推送");
     }
 
     private Runnable initRunnable = new Runnable() {

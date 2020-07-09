@@ -12,12 +12,6 @@ public enum PushTargetEnum {
     JPUSH("JPUSH"),
 
     /**
-     * GOOGLE
-     */
-
-    GOOGLE("GOOGLE"),
-
-    /**
      * 小米
      */
     XIAOMI("XIAOMI"),
@@ -41,7 +35,6 @@ public enum PushTargetEnum {
      * VIVO
      */
     VIVO("VIVO");
-
 
     public String brand;
 

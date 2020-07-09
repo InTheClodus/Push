@@ -4,7 +4,19 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
     defaultConfig {
-
+        manifestPlaceholders = [
+                "jPushAppkey"     : "516ab7ea1880beb1183b956a",//极光推送的AppKey
+                "huaweiPushAppId" : "100698925",//华为推送的AppId
+                "xiaomiPushAppkey": "28823037615184 50754",//"57417800 14675",//小米推送的AppKey****请务必在数值中间添加一个空格，否则会发生数值变化****
+                "xiaomiPushAppId" : "28823037 61517974571",//"28823037 61517800675",//小米推送的AppID****请务必在数值中间添加一个空格，否则会发生数值变化****
+                "oppoAppKey"      : "9d24177594c741be86465ec9fe490a44",//OPPO推送的appKey
+                "oppoAppSecret"   : "c60bec1f803e49e88037562ec2109286",//OPPO推送的appSecret
+                "meizuAppId"      : "1200 55",//魅族推送AppId ****请务必在数值中间添加一个空格，否则会发生数值变化****
+                "meizuAppKey"     : "3aca7449444347c4a1d2a70826ae1e9b",//魅族推送AppKey
+                "vivoAppId"       : "11937",//vivo推送AppId
+                "vivoAppKey"      : "acfdb480-e178-4098-80ae-76284df7d588",//vivo推送AppKey
+                "marketChannel"   : "develops"//渠道
+        ]
         applicationId "com.bearever.pushdemo"
         minSdkVersion 21
         targetSdkVersion 30
@@ -45,5 +57,6 @@ dependencies {
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+
     testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
 }

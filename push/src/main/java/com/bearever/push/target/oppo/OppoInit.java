@@ -19,6 +19,9 @@ import java.util.List;
 
 /**
  * oppo的推送服务初始化
+ * 作者：luoming on 2018/9/30.
+ * 邮箱：luomingbear@163.com
+ * 版本：v1.0
  */
 public class OppoInit extends BasePushTargetInit {
     private static final String TAG = "OppoInit";
