@@ -14,6 +14,8 @@ import androidx.annotation.RequiresApi;
 import com.bearever.push.PushTargetManager;
 import com.bearever.push.model.ReceiverInfo;
 import com.bearever.push.target.BasePushTargetInit;
+//import com.google.gson.Gson;
+//import com.google.gson.GsonBuilder;
 import com.google.gson.Gson;
 
 import java.lang.annotation.Target;
@@ -85,9 +87,10 @@ public class PushReceiverHandleManager {
      * @param info
      */
     private void sendBroadcast(Context context, int type, ReceiverInfo info) {
-        Log.d(TAG, "发送广播\nPackageName:" + context.getPackageName() + "\n" + info.toString());
+        Log.d(TAG, "发送广播\nPackageName:" + context.getPackageName() + "\n" + info.toString()+"\n");
+        String json="{"+"pushTarget:"+info.getPushTarget()+","+"title:" + info.getTitle() +","+"content:" + info.getContent()+"}";
         Intent intent = new Intent();
-        intent.putExtra("receiverinfo"," new Gson().toJson(info)");// Gson().toJson()会导致内存溢出
+        intent.putExtra("receiverinfo",json);// Gson().toJson()会导致内存溢出
         intent.putExtra("type", type);
         intent.putExtra("pushTarget", info.getPushTarget());
         intent.setAction(PushTargetManager.ACTION);
@@ -121,7 +124,7 @@ public class PushReceiverHandleManager {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
                 s = String.valueOf(ctxt.getOpPackageName());
             }
-            Log.d(TAG,s);
+            Log.d(TAG,s+PushTargetManager.PERMISSION+"--------------");
             ctxt.sendBroadcast(explicit, ctxt.getPackageName() + PushTargetManager.PERMISSION);
         }
     }

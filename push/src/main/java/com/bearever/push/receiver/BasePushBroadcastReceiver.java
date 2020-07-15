@@ -3,7 +3,7 @@ package com.bearever.push.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
+import android.util.Log;
 
 import com.bearever.push.model.ReceiverInfo;
 import com.google.gson.Gson;
@@ -23,9 +23,10 @@ public abstract class BasePushBroadcastReceiver extends BroadcastReceiver {
         if (intent == null) {
             return;
         }
-        Toast.makeText(context,"接收到自定义广播",Toast.LENGTH_SHORT).show();
+
         String json = intent.getStringExtra("receiverinfo");
         ReceiverInfo info = new Gson().fromJson(json, ReceiverInfo.class);
+//        ReceiverInfo info=intent.getParcelableExtra("receiverinfo");receiverinfo
         int type = intent.getIntExtra("type", 0);
         switch (type) {
             case PushReceiverHandleManager.TYPE_REGISTRATION:

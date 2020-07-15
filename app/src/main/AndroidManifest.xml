@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bearever.pushdemo">
-
+<!--    com.bearever.pushdemo.push.RECEIVER-->
+    <permission
+        android:name="com.bearever.pushdemo.push.RECEIVER"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.bearever.pushdemo.push.RECEIVER" />
 
     <application
         android:name=".MyApplication"
@@ -49,24 +53,7 @@
                 <action android:name="com.bearever.push.IPushBroadcast" />
             </intent-filter>
         </receiver>
-        <receiver
-            android:name=".PushBroadReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.bearever.push.IPushBroadcast" />
-                <action android:name="com.example.globalbroadcastdemo.MY_TEST"/>
-            </intent-filter>
-        </receiver>
 <!--        //当接收到这条广播时，就会进行匹配，如果匹配成功，就会调用上面的onReceive方法-->
-        <receiver
-            android:name=".MyReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.globalbroadcastdemo.MY_TEST"/>
-            </intent-filter>
-        </receiver>
 
     </application>
 
